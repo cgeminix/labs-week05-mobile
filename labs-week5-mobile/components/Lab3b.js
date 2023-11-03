@@ -66,7 +66,7 @@ const Lab3b = ({navigation}) => {
         <Pressable style={{margin:'3px',width: '60px', height:'60px', backgroundColor:'blue'}}
           onPress={()=>{[setImage(require('../assets/vs_blue.png')),setMau('Xanh')]}}>
         </Pressable>
-        <Pressable style={styles.btnXong} onPress={()=> navigation.navigate('Home',{image:image})}>
+        <Pressable style={styles.btnXong} onPress={()=> navigation.navigate('Home',image)}>
             <Text style={{fontSize:'20px', fontWeight:700, color:'#fff'}}>
               Xong
             </Text>

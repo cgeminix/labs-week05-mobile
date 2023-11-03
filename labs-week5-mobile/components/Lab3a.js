@@ -1,8 +1,13 @@
 import { StyleSheet, Text, View, Pressable, Image } from "react-native";
 import { useRoute } from "@react-navigation/native";
 
-const Lab3a=({ navigation }) =>{
-  const route = useRoute();
+const Lab3a=({ navigation, route }) =>{
+  var[image, setImage] = useState(require('../assets/vs_silver.png'));
+  useEffect(()=>{
+    if(route.params){
+      setImage(route.params)
+    }
+  },[route.params])
   const styles = StyleSheet.create({
         container: {
             flex: 1,
@@ -54,7 +59,7 @@ const Lab3a=({ navigation }) =>{
           <Image
             style ={{width:'180px', height:'250px'}}
             resizeMode='contain'
-            source={require('../assets/vs_silver.png')}
+            source={route.params||image}
             //source={route.params.image}
           />
             
